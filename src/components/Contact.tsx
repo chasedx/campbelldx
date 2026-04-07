@@ -6,15 +6,15 @@ export default function Contact() {
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
             Contact
           </p>
-          <h2 className="mt-4 font-heading text-3xl font-semibold text-navy sm:text-4xl">
-            Ready to know what&apos;s going on — in real time?
+          <h2 className="mt-4 font-heading text-3xl font-bold text-navy sm:text-4xl">
+            Let&apos;s build something that works.
           </h2>
           <p className="mt-6 max-w-md text-[17px] leading-relaxed text-muted">
-            Whether it&apos;s streamlining tedious tasks, getting
-            information to the right people with zero errors, or
-            simply having answers the moment you need them — tell us
-            what would make the biggest difference. We&apos;ll respond
-            same day with a straight answer — no pitch decks, no runaround.
+            Whether you need a new website, a marketing engine, a
+            reporting dashboard, or a system that handles data at
+            scale — tell us what would make the biggest difference.
+            We&apos;ll respond same day with a straight answer — no
+            pitch decks, no runaround.
           </p>
         </div>
         <form className="space-y-5">
@@ -87,7 +87,7 @@ export default function Contact() {
               htmlFor="bottleneck"
               className="block text-sm font-medium text-navy"
             >
-              Biggest Bottleneck
+              What Do You Need?
             </label>
             <select
               id="bottleneck"
@@ -98,11 +98,12 @@ export default function Contact() {
               <option value="" disabled>
                 Select one...
               </option>
-              <option>Manual data entry &amp; repetitive tasks</option>
-              <option>Disconnected tools &amp; systems</option>
-              <option>No visibility into operations</option>
-              <option>Client communication &amp; follow-up</option>
+              <option>I need a website or web app</option>
+              <option>Marketing &amp; lead generation</option>
+              <option>Dashboards &amp; data visualization</option>
               <option>Reporting &amp; analytics</option>
+              <option>Large-scale data handling</option>
+              <option>Process automation &amp; integrations</option>
               <option>Something else</option>
             </select>
           </div>
@@ -118,7 +119,7 @@ export default function Contact() {
               name="message"
               rows={4}
               className="mt-1.5 w-full border border-border bg-white px-4 py-3 text-sm text-navy outline-none transition focus:border-accent"
-              placeholder="Tell us what's slowing you down..."
+              placeholder="Tell us about your project..."
             />
           </div>
           <button

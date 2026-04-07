@@ -1,33 +1,33 @@
 const services = [
   {
-    title: "Workflow Automation",
+    title: "Web Development",
     description:
-      "Replace repetitive manual processes with reliable automations that run in the background, so your team can focus on real work.",
+      "Custom-built websites and web applications designed to convert — fast, responsive, and tailored to your brand and business goals.",
   },
   {
-    title: "AI-Driven Reporting",
+    title: "Marketing Strategy",
     description:
-      "Get clear, actionable reports generated automatically from your existing data — no more pulling numbers by hand.",
+      "Data-backed campaigns and digital marketing that actually move the needle — SEO, paid media, email, and content that drives real results.",
   },
   {
-    title: "Custom Integrations",
+    title: "Dashboards & Visualization",
     description:
-      "Connect the tools you already use into one cohesive system. No more copying data between platforms.",
+      "Interactive dashboards that put your key metrics front and center. See what matters at a glance and make faster, smarter decisions.",
   },
   {
-    title: "AI Assistants",
+    title: "Reporting & Analytics",
     description:
-      "Purpose-built AI tools that handle intake, answer questions, and route information — trained on your business.",
+      "Automated reporting pipelines that turn raw data into clear, actionable insights — delivered on schedule, not by request.",
   },
   {
-    title: "Client Data Portals",
+    title: "Large-Scale Data Handling",
     description:
-      "Give your clients a clean, branded portal to access their information, documents, and status updates in real time.",
+      "Built to handle volume. We architect data pipelines and processing systems that stay fast and reliable as your data grows.",
   },
   {
-    title: "Done-For-You Setup",
+    title: "Process Automation",
     description:
-      "We handle the full build — architecture, implementation, testing, and handoff. You stay focused on running your business.",
+      "Eliminate the manual work slowing your team down. We build automations and integrations that keep your operations running seamlessly.",
   },
 ];
 
@@ -36,10 +36,10 @@ export default function Services() {
     <section id="services" className="bg-white py-24">
       <div className="mx-auto max-w-6xl px-6">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-          What We Build
+          What We Do
         </p>
-        <h2 className="mt-4 font-heading text-3xl font-semibold text-navy sm:text-4xl">
-          Systems that actually work.
+        <h2 className="mt-4 font-heading text-3xl font-bold text-navy sm:text-4xl">
+          Full-stack solutions. Real results.
         </h2>
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (

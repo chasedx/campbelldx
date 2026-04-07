@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Campbell Digital Solutions",
   description:
-    "We build the digital systems behind your business — process automations, AI tools, and integrations that eliminate manual computer work and give you clear visibility into your operations.",
+    "Web development, marketing, dashboards, reporting, and large-scale data solutions. Campbell Digital Solutions builds what drives your business forward.",
 };
 
 export default function RootLayout({
