@@ -2,8 +2,8 @@ export default function Hero() {
   return (
     <section className="bg-navy">
       <div className="mx-auto max-w-6xl px-6 py-28 lg:py-40">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-          Web Development &middot; Marketing &middot; Data &amp; Analytics
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/50">
+          AI &amp; Automation &middot; Web Development &middot; Data &amp; Analytics
         </p>
         <h1 className="mt-6 max-w-3xl font-heading text-5xl font-bold leading-[1.08] text-white sm:text-6xl lg:text-[5.25rem]">
           We build what drives your business forward.

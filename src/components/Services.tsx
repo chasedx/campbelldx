@@ -1,8 +1,13 @@
 const services = [
   {
+    title: "AI & Automation",
+    description:
+      "Purpose-built AI tools and workflow automations that eliminate repetitive work, route information, and keep your operations running without manual intervention.",
+  },
+  {
     title: "Web Development",
     description:
-      "Custom-built websites and web applications designed to convert — fast, responsive, and tailored to your brand and business goals.",
+      "Custom websites and web applications designed to convert — fast, responsive, and tailored to your brand and business goals.",
   },
   {
     title: "Marketing Strategy",
@@ -20,14 +25,9 @@ const services = [
       "Automated reporting pipelines that turn raw data into clear, actionable insights — delivered on schedule, not by request.",
   },
   {
-    title: "Large-Scale Data Handling",
+    title: "Data Operations & Integrations",
     description:
-      "Built to handle volume. We architect data pipelines and processing systems that stay fast and reliable as your data grows.",
-  },
-  {
-    title: "Process Automation",
-    description:
-      "Eliminate the manual work slowing your team down. We build automations and integrations that keep your operations running seamlessly.",
+      "From cleaning up messy files to building large-scale data pipelines and connecting your tools into one system — we handle the data work so you don't have to.",
   },
 ];
 

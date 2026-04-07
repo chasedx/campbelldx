@@ -7,14 +7,13 @@ export default function Contact() {
             Contact
           </p>
           <h2 className="mt-4 font-heading text-3xl font-bold text-navy sm:text-4xl">
-            Let&apos;s build something that works.
+            Let&apos;s turn your data into revenue.
           </h2>
           <p className="mt-6 max-w-md text-[17px] leading-relaxed text-muted">
-            Whether you need a new website, a marketing engine, a
-            reporting dashboard, or a system that handles data at
-            scale — tell us what would make the biggest difference.
-            We&apos;ll respond same day with a straight answer — no
-            pitch decks, no runaround.
+            You have data, processes, and tools — we turn them into
+            insights, automation, and growth. Tell us what would make
+            the biggest difference and we&apos;ll respond same day with
+            a straight answer — no pitch decks, no runaround.
           </p>
         </div>
         <form className="space-y-5">
@@ -98,12 +97,12 @@ export default function Contact() {
               <option value="" disabled>
                 Select one...
               </option>
-              <option>I need a website or web app</option>
+              <option>AI &amp; automation</option>
+              <option>Website or web app</option>
               <option>Marketing &amp; lead generation</option>
               <option>Dashboards &amp; data visualization</option>
               <option>Reporting &amp; analytics</option>
-              <option>Large-scale data handling</option>
-              <option>Process automation &amp; integrations</option>
+              <option>Data cleanup, pipelines &amp; integrations</option>
               <option>Something else</option>
             </select>
           </div>
