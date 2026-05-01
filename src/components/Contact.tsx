@@ -1,4 +1,10 @@
+"use client";
+
+import { useForm, ValidationError } from "@formspree/react";
+
 export default function Contact() {
+  const [state, handleSubmit] = useForm("xgodvkgg");
+
   return (
     <section id="contact" className="bg-white py-24">
       <div className="mx-auto grid max-w-6xl gap-16 px-6 lg:grid-cols-2">
@@ -16,118 +22,153 @@ export default function Contact() {
             a straight answer — no pitch decks, no runaround.
           </p>
         </div>
-        <form className="space-y-5">
-          <div className="grid gap-5 sm:grid-cols-2">
-            <div>
-              <label
-                htmlFor="firstName"
-                className="block text-sm font-medium text-navy"
-              >
-                First Name
-              </label>
-              <input
-                type="text"
-                id="firstName"
-                name="firstName"
-                className="mt-1.5 w-full border border-border bg-white px-4 py-3 text-sm text-navy outline-none transition focus:border-accent"
-                placeholder="First name"
-              />
-            </div>
-            <div>
-              <label
-                htmlFor="lastName"
-                className="block text-sm font-medium text-navy"
-              >
-                Last Name
-              </label>
-              <input
-                type="text"
-                id="lastName"
-                name="lastName"
-                className="mt-1.5 w-full border border-border bg-white px-4 py-3 text-sm text-navy outline-none transition focus:border-accent"
-                placeholder="Last name"
-              />
-            </div>
+        {state.succeeded ? (
+          <div className="flex flex-col justify-center border border-border bg-white p-10">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+              Message received
+            </p>
+            <h3 className="mt-4 font-heading text-2xl font-bold text-navy">
+              Thanks — we&apos;ll be in touch today.
+            </h3>
+            <p className="mt-4 text-[15px] leading-relaxed text-muted">
+              Your message just hit our inbox. Expect a same-day reply
+              with a straight answer on what we&apos;d recommend and
+              what it would cost.
+            </p>
           </div>
-          <div className="grid gap-5 sm:grid-cols-2">
-            <div>
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-navy"
-              >
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                className="mt-1.5 w-full border border-border bg-white px-4 py-3 text-sm text-navy outline-none transition focus:border-accent"
-                placeholder="you@company.com"
-              />
+        ) : (
+          <form className="space-y-5" onSubmit={handleSubmit}>
+            <div className="grid gap-5 sm:grid-cols-2">
+              <div>
+                <label
+                  htmlFor="firstName"
+                  className="block text-sm font-medium text-navy"
+                >
+                  First Name
+                </label>
+                <input
+                  type="text"
+                  id="firstName"
+                  name="firstName"
+                  className="mt-1.5 w-full border border-border bg-white px-4 py-3 text-sm text-navy outline-none transition focus:border-accent"
+                  placeholder="First name"
+                />
+              </div>
+              <div>
+                <label
+                  htmlFor="lastName"
+                  className="block text-sm font-medium text-navy"
+                >
+                  Last Name
+                </label>
+                <input
+                  type="text"
+                  id="lastName"
+                  name="lastName"
+                  className="mt-1.5 w-full border border-border bg-white px-4 py-3 text-sm text-navy outline-none transition focus:border-accent"
+                  placeholder="Last name"
+                />
+              </div>
+            </div>
+            <div className="grid gap-5 sm:grid-cols-2">
+              <div>
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium text-navy"
+                >
+                  Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  className="mt-1.5 w-full border border-border bg-white px-4 py-3 text-sm text-navy outline-none transition focus:border-accent"
+                  placeholder="you@company.com"
+                />
+                <ValidationError
+                  field="email"
+                  prefix="Email"
+                  errors={state.errors}
+                  className="mt-1.5 text-xs text-red-600"
+                />
+              </div>
+              <div>
+                <label
+                  htmlFor="phone"
+                  className="block text-sm font-medium text-navy"
+                >
+                  Phone
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  className="mt-1.5 w-full border border-border bg-white px-4 py-3 text-sm text-navy outline-none transition focus:border-accent"
+                  placeholder="(555) 000-0000"
+                />
+              </div>
             </div>
             <div>
               <label
-                htmlFor="phone"
+                htmlFor="bottleneck"
                 className="block text-sm font-medium text-navy"
               >
-                Phone
+                What Do You Need?
               </label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
+              <select
+                id="bottleneck"
+                name="bottleneck"
+                className="mt-1.5 w-full appearance-none border border-border bg-white px-4 py-3 text-sm text-navy outline-none transition focus:border-accent"
+                defaultValue=""
+              >
+                <option value="" disabled>
+                  Select one...
+                </option>
+                <option>AI &amp; automation</option>
+                <option>Website or web app</option>
+                <option>Marketing &amp; lead generation</option>
+                <option>Dashboards &amp; data visualization</option>
+                <option>Reporting &amp; analytics</option>
+                <option>Data cleanup, pipelines &amp; integrations</option>
+                <option>Something else</option>
+              </select>
+            </div>
+            <div>
+              <label
+                htmlFor="message"
+                className="block text-sm font-medium text-navy"
+              >
+                Message
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                rows={4}
+                required
                 className="mt-1.5 w-full border border-border bg-white px-4 py-3 text-sm text-navy outline-none transition focus:border-accent"
-                placeholder="(555) 000-0000"
+                placeholder="Tell us about your project..."
+              />
+              <ValidationError
+                field="message"
+                prefix="Message"
+                errors={state.errors}
+                className="mt-1.5 text-xs text-red-600"
               />
             </div>
-          </div>
-          <div>
-            <label
-              htmlFor="bottleneck"
-              className="block text-sm font-medium text-navy"
-            >
-              What Do You Need?
-            </label>
-            <select
-              id="bottleneck"
-              name="bottleneck"
-              className="mt-1.5 w-full appearance-none border border-border bg-white px-4 py-3 text-sm text-navy outline-none transition focus:border-accent"
-              defaultValue=""
-            >
-              <option value="" disabled>
-                Select one...
-              </option>
-              <option>AI &amp; automation</option>
-              <option>Website or web app</option>
-              <option>Marketing &amp; lead generation</option>
-              <option>Dashboards &amp; data visualization</option>
-              <option>Reporting &amp; analytics</option>
-              <option>Data cleanup, pipelines &amp; integrations</option>
-              <option>Something else</option>
-            </select>
-          </div>
-          <div>
-            <label
-              htmlFor="message"
-              className="block text-sm font-medium text-navy"
-            >
-              Message
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              rows={4}
-              className="mt-1.5 w-full border border-border bg-white px-4 py-3 text-sm text-navy outline-none transition focus:border-accent"
-              placeholder="Tell us about your project..."
+            <ValidationError
+              errors={state.errors}
+              className="text-xs text-red-600"
             />
-          </div>
-          <button
-            type="submit"
-            className="w-full bg-navy py-3.5 text-sm font-semibold text-white transition hover:bg-navy/90"
-          >
-            Send it &rarr;
-          </button>
-        </form>
+            <button
+              type="submit"
+              disabled={state.submitting}
+              className="w-full bg-navy py-3.5 text-sm font-semibold text-white transition hover:bg-navy/90 disabled:cursor-not-allowed disabled:opacity-60"
+            >
+              {state.submitting ? "Sending..." : "Send it →"}
+            </button>
+          </form>
+        )}
       </div>
     </section>
   );
